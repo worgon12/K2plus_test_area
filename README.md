@@ -24,12 +24,12 @@ Configuration (printer.cfg)
 
 ```bash
 [prtouch_v3]
-z_offset: 0
+#z_offset: 0
 speed: 8
 samples: 3
 samples_result: median
-samples_tolerance: 0.02
-samples_tolerance_retries: 2
+samples_tolerance: 0.03
+samples_tolerance_retries: 3
 prth_clr_probe_pos: 150,355
 step_swap_pin: !PC7
 pres_swap_pin: nozzle_mcu:PA15
@@ -46,7 +46,7 @@ prth_tri_zacc: 1000
 prth_min_fans: 0.3
 
 regional_prtouch_switch: True
-regional_prtouch_percentage: 0.8
+regional_prtouch_percentage: 0.85
 ```
 
 # w12 — still in testing -------------------------------------------------------------------
@@ -84,13 +84,13 @@ mesh_min: 5,5
 mesh_max: 345,345
 probe_count: 5,5 # used by w12_leveling.cfg
 mesh_pps: 3,3
-fade_start: 0.3
-fade_end: 10
-bicubic_tension: 0.2
+fade_start: 0.25
+fade_end: 8
+bicubic_tension: 0.25
 algorithm: bicubic
 horizontal_move_z: 3
-split_delta_z: 0.02
-move_check_distance: 2
+split_delta_z: 0.015
+move_check_distance: 1.5
 ```
 
 ## Rationale: what changed & why
@@ -116,3 +116,4 @@ split_delta_z: 0.02 / move_check_distance: 2 — Reasonable precision and move c
 ## Experimental. No warranty.
 
 ## You are responsible for any risk or damage. Always supervise your first runs after changing probing or mesh settings.
+
